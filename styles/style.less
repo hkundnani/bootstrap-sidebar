@@ -1,0 +1,135 @@
+@gray-shade-1: #f6f6f6;
+@gray-shade-2: #8e8e8e;
+@blue-shade-1: #436EEE;
+
+body {
+  background: @gray-shade-1;
+}
+#wrapper {
+  padding-left: 0;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+#wrapper.toggled {
+  padding-left: 120px;
+  
+  #sidebar-wrapper {
+    width: 120px;
+  }
+
+  #page-content-wrapper {
+    margin-right: -120px;
+    position: absolute;
+  }
+}
+
+#sidebar-wrapper {
+  background: url('/images/debut_dark.png');
+  height: 100%;
+  left: 120px;
+  margin-left: -120px;
+  overflow-y: hidden;
+  position: fixed;
+  width: 0;
+  z-index: 1000;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#page-content-wrapper {
+  padding: 15px;
+  position: absolute;
+  width: 100%;
+}
+
+.sidebar-container {
+  .sidebar-nav {
+    background: @gray-shade-2;
+    border-radius: 50%;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin: 15px 0px 5px 15px;
+    span {
+      margin-top: 10px;
+    }
+  }
+
+  .sidebar-notification {
+    background: transparent;
+    display: inline-block;
+    border: 2px solid @gray-shade-2;
+    border-left-color: transparent;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    margin-left: -5px;
+    span {
+      color: @gray-shade-2;
+      vertical-align: bottom;
+    }       
+  }
+
+  &:hover {
+    background: @gray-shade-1;
+    .sidebar-nav {
+      background: @blue-shade-1;
+      span {
+        color: white;
+      }
+    }
+    .sidebar-notification {
+      display: none;
+    }
+  }
+}
+
+@media(min-width:768px) {
+  #wrapper { 
+    padding-left: 120px;
+  }
+
+  #wrapper.toggled {
+    padding-left: 0;
+
+    #sidebar-wrapper {
+      width: 0;
+    }
+
+    #page-content-wrapper {
+      position: relative;
+      margin-right: 0;
+    }
+  }
+
+  #sidebar-wrapper {
+    width: 120px;
+  }
+
+  #page-content-wrapper {
+    padding: 15px;
+    position: relative;
+  }
+}
+
+.no-margin {
+  margin: 0;
+  background-color: #ccc;
+  min-height: 60px;
+  border-radius: 0;
+}
+.custom-line {
+  margin-bottom: 0;
+  box-shadow: 0 1px 1px #666;
+  border-color: #3c3c3c;
+}
+.sidebar-brand {
+  background-color: @blue-shade-1;
+  height: 60px;
+}

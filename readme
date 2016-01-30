@@ -1,0 +1,10 @@
+Instructions to run the project
+
+1. Extract the zip folder
+2. **Load the project on a local http server. If node is installed then you can run http server using node command 'http-server'.
+3. **Do not run project without local http server as chrome will give CORS error while trying to load css file which is generated through less compiler, No css will load if you run project without local http server.
+4. Once you have run the local server, open the index file on browser.
+
+The project has been uploaded to surge. To see the live page please go the below mentioned url
+
+http://samplepage-demo.surge.sh/  
